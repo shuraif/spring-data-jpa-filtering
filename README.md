@@ -1,4 +1,4 @@
-# Student Search API
+# spring-data-jpa-filtering 
 
 A REST API endpoint for demonstrating searching with flexible filtering capabilities and pagination support.
 
