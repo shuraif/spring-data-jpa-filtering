@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -22,10 +23,17 @@ public class StudentSpecification {
           // WERE name LIKE '%value%'
           case "name" -> predicates.add(cb.like(cb.lower(root.get("name")), "%" + value.toLowerCase() + "%"));
 
-          // exact match for other fields similar to SQL where clause with equal operator
+          // In operator for country fields, allowing multiple values separated by commas
+          // This is similar to SQL where clause with IN operator
+          // WHERE country IN ('US', 'UK', ...)
+          case "country" -> {
+            String[] values = value.split(",");
+            predicates.add(root.get("country").in(Arrays.asList(values)));
+          }
+
+          // Exact match for department field. This is similar to SQL where clause with equal operator
           // WHERE department = value
           case "department" -> predicates.add(cb.equal(root.get("department"), value));
-          case "country" -> predicates.add(cb.equal(root.get("country"), value));
           case "city" -> predicates.add(cb.equal(root.get("city"), value));
           case "email" -> predicates.add(cb.equal(root.get("email"), value));
           case "phone" -> predicates.add(cb.equal(root.get("phone"), value));
