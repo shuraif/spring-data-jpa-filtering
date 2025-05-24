@@ -336,6 +336,7 @@ All date fields must follow the `yyyy-MM-dd` format:
 
 - All filters are combined using AND logic
 - The `name` filter is case-insensitive and supports partial matching
+- The `country` filter support multiple value as comma separated list
 - All other text filters require exact matches
 - Date filters support both exact matching and range queries
 - Empty filter objects are allowed and will return all students
