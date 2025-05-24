@@ -5,6 +5,10 @@ WORKDIR /app
 # Pass Jasypt password as an ARG
 ARG JASYPT_PASSWORD
 
+# Copy project files
+COPY pom.xml .
+COPY src ./src
+
 # Build the project
 RUN mvn clean package -DskipTests
 
