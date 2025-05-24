@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://dpg-d0jb81mmcj7s73fqh480-a.oregon-postgres.render.com/common_postgre_db_lzix
+    username: ENC(ndWb4XIbvddXzGNk++teG27InA1yYlV0aKEJFg5oJW1DnjyuHapXiVsUfYPbQwcZR0jXhWjYxEWR7NnSwM6dzQ==)
+    password: ENC(Omii5Z3SSGjhoOrrfEopbJft/VUHvRP4WIgm3aZFYhfPmb3fjWjnOtEnCgTiuI1M3fcYJ26WJkSIdWIRI+lSR7v15jLnrhCscassFeotFuo=)
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true

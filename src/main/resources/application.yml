@@ -1,15 +1,15 @@
 server:
-  port: 8085
+  port: 8080
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/filter_test
-    username: root
-    password: ENC(8hD3Ns3Xz6FGoDR6/E1DPDi18Jvro/SBQ1O6BpzM6V8=)
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/devdb
+    username: ENC(nHR33fcLkPnMxaVkRJIB03JhZfLbRTgnUCaIumcFxaUzNkq20rGC9cluX78wUj9H)
+    password: ENC(t2+uWLkGRcAhknR6497iOHUVfkcJhTm6G7XCoBwxC1cSRZTI5METeVV2lqwniSl6)
+    driver-class-name: org.postgresql.Driver
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
       naming:
