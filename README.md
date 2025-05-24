@@ -2,11 +2,17 @@
 
 A REST API endpoint for demonstrating searching with flexible filtering capabilities and pagination support.
 
+## Quick Links
+- **API Base URL**: `https://spring-data-jpa-filtering.onrender.com`
+- **Swagger UI**: [https://spring-data-jpa-filtering.onrender.com/swagger-ui/index.html](https://spring-data-jpa-filtering.onrender.com/swagger-ui/index.html)
+- **API Documentation**: [https://spring-data-jpa-filtering.onrender.com/v3/api-docs](https://spring-data-jpa-filtering.onrender.com/v3/api-docs)
+
 ## Endpoint
 
 ```
 POST /search
 ```
+**Full URL**: `https://spring-data-jpa-filtering.onrender.com/search`
 
 ## Query Parameters
 
