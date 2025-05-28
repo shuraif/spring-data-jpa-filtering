@@ -1,4 +1,4 @@
-# spring-data-jpa-filtering 
+# spring-data-jpa-filtering
 
 A REST API endpoint for demonstrating searching with flexible filtering capabilities and pagination support.
 
@@ -41,7 +41,7 @@ The request body should contain a JSON object with a `filters` property:
 - **Key**: `name`
 - **Type**: String
 - **Behavior**: Case-insensitive partial match (LIKE '%value%')
-- **Example**: 
+- **Example**:
   ```json
   {
     "filters": {
@@ -58,7 +58,7 @@ The request body should contain a JSON object with a `filters` property:
 - **Type**: String
 - **Behavior**: Multiple values supported (comma-separated) using IN operator
 - **Single Value Example**:
-  
+
   ```json
   {
     "filters": {
@@ -74,7 +74,11 @@ The request body should contain a JSON object with a `filters` property:
     }
   }
   ```
-- **Multiple Values which contains comma as part of the string**:
+#### Review
+
+- **Key**: `review`
+- **Type**: Json Array encoded as String
+- **Behavior**: Multiple values containing comma(,) supported (JSON String) using IN operator
   ```json
   {
     "filters": {
@@ -350,6 +354,7 @@ All date fields must follow the `yyyy-MM-dd` format:
 - All filters are combined using AND logic
 - The `name` filter is case-insensitive and supports partial matching
 - The `country` filter support multiple value as comma separated list
+- The `review` filter supports multiple values, including those containing commas. These should be sent as a JSON array encoded as a string
 - All other text filters require exact matches
 - Date filters support both exact matching and range queries
 - Empty filter objects are allowed and will return all students
