@@ -74,7 +74,14 @@ The request body should contain a JSON object with a `filters` property:
     }
   }
   ```
-  
+- **Multiple Values which contains comma as part of the string**:
+  ```json
+  {
+    "filters": {
+      "review" :  "[\"Creative but needs to follow instructions\", \"Incomplete assignments, often late\"]"
+    }
+  }
+  ``` 
 
 ### Exact Match Filters
 

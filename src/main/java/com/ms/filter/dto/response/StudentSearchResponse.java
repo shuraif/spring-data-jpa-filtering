@@ -19,5 +19,6 @@ public class StudentSearchResponse {
   private String state;
   private String country;
   private LocalDate dob;
+  private String review;
 
 }

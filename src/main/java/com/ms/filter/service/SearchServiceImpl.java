@@ -33,7 +33,8 @@ public class SearchServiceImpl implements SearchService {
             student.getCity(),
             student.getState(),
             student.getCountry(),
-            student.getDob()
+            student.getDob(),
+            student.getReview()
         )
     );
 
