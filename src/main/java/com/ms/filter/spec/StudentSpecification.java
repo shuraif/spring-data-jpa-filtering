@@ -1,5 +1,6 @@
 package com.ms.filter.spec;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ms.filter.entity.Student;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
@@ -41,6 +42,22 @@ public class StudentSpecification {
           // Exact match for date fields. If exact date is provided, it will match the date exactly.
           // WHERE dob = value
           case "dob" -> predicates.add(cb.equal(root.get("dob"), LocalDate.parse(value)));
+
+          // For review, we can pass json string with multiple values as request
+          // Then we can use jackson to parse the json string into a list of values
+          // This is similar to SQL where clause with in operator
+          case "review" -> {
+            // Assuming review is a JSON array of strings "[\"value1\", \"value2\", ...]"
+            try {
+              ObjectMapper objectMapper = new ObjectMapper();
+              String[] reviews = objectMapper.readValue(value, String[].class);
+              predicates.add(root.get("review").in(Arrays.asList(reviews)));
+            } catch (Exception e) {
+              // Handle parsing error or invalid format
+              e.printStackTrace();
+              throw new IllegalArgumentException("Invalid review format. Use comma-separated values.");
+            }
+          }
 
         }
       });

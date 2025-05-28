@@ -24,5 +24,6 @@ public class Student {
   private String state;
   private String country;
   private LocalDate dob;
+  private String review;
 
 }
