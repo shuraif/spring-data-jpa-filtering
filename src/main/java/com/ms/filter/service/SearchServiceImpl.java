@@ -34,7 +34,10 @@ public class SearchServiceImpl implements SearchService {
             student.getState(),
             student.getCountry(),
             student.getDob(),
-            student.getReview()
+            student.getReview(),
+            student.getComments().stream()
+                .map(comment -> comment.getCommentText())
+                .collect(Collectors.toList())
         )
     );
 
